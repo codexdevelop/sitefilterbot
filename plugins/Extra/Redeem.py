@@ -22,7 +22,7 @@ async def add_redeem_code(client, message):
             time = message.command[1]
             num_codes = int(message.command[2])
         except ValueError:
-            await message.reply_text("Please provide a valid number of codes to generate.")
+            await message.reply_text("😞Please provide a valid number of codes to generate.")
             return
 
         codes = []
@@ -33,19 +33,19 @@ async def add_redeem_code(client, message):
 
         codes_text = '\n'.join(f"➔ <code>/redeem {code}</code>" for code in codes)
         response_text = f"""
-<b>Gɪғᴛᴄᴏᴅᴇ Gᴇɴᴇʀᴀᴛᴇᴅ ✅
+<b>Gɪғᴛᴄᴏᴅᴇ Gᴇɴᴇʀᴀᴛᴇᴅ 🙊
 Aᴍᴏᴜɴᴛ:</b> {num_codes}
 
 {codes_text}
 <b>Duration:</b> {time}
 
-🔰<u>𝗥𝗲𝗱𝗲𝗲𝗺 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻</u>🔰
-<b>𝙹𝚞𝚜𝚝 𝚌𝚕𝚒𝚌𝚔 𝚝𝚑𝚎 𝚊𝚋𝚘𝚟𝚎 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚌𝚘𝚙𝚢 𝚊𝚗𝚍 𝚝𝚑𝚎𝚗 𝚜𝚎𝚗𝚍 𝚝𝚑𝚊𝚝 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚝𝚑𝚎 𝙱𝚘𝚝, 𝚝𝚑𝚊𝚝'𝚜 𝚒𝚝 🔥</b>"""
+🧬<u>𝗥𝗲𝗱𝗲𝗲𝗺 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻</u>🧬
+<b>𝙹𝚞𝚜𝚝 𝚌𝚕𝚒𝚌𝚔 𝚝𝚑𝚎 𝚊𝚋𝚘𝚟𝚎 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚌𝚘𝚙𝚢 𝚊𝚗𝚍 𝚝𝚑𝚎𝚗 𝚜𝚎𝚗𝚍 𝚝𝚑𝚊𝚝 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚝𝚑𝚎 𝙱𝚘𝚝, 𝚝𝚑𝚊𝚝'𝚜 𝚒𝚝 🫠</b>"""
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/NehaTestBot")],
-                [InlineKeyboardButton("❕ Any Query ❕", url="https://t.me/IM_JISSHU")]
+                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/Codexownerr")],
+                [InlineKeyboardButton("🤔 Any Query 🤔", url="https://t.me/codexdisscus")]
             ]
         )
 
@@ -82,7 +82,7 @@ async def redeem_code(client, message):
                     if current_expiry and current_expiry > now_aware:
                         expiry_str_in_ist = current_expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
                         await message.reply_text(
-                            f"🚫 You already have premium access, which expires on {expiry_str_in_ist}.\nYou cannot redeem another code until your current premium expires.",
+                            f"🤨 You already have premium access, which expires on {expiry_str_in_ist}.\n\n🔮You cannot redeem another code until your current premium expires.",
                             disable_web_page_preview=True
                         )
                         return
@@ -100,7 +100,7 @@ async def redeem_code(client, message):
 
                     await client.send_message(
                         LOG_CHANNEL,
-                        text=f"#Redeem_Premium\n\n👤 User: {user.mention}\n⚡ User ID: <code>{user_id}</code>\n⏰ Premium Access: <code>{time}</code>\n⌛️ Expiry Date: {expiry_str_in_ist}",
+                        text=f"#Redeem_Premium\n\n👤 User: {user.mention}\n🪄 User ID: <code>{user_id}</code>\n💞 Premium Access: <code>{time}</code>\n😞 Expiry Date: {expiry_str_in_ist}",
                         disable_web_page_preview=True
                     )
                 else:
