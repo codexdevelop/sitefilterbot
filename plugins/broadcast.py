@@ -13,11 +13,11 @@ lock = asyncio.Lock()
 async def broadcast_cancel(bot, query):
     _, ident = query.data.split("#")
     if ident == 'users':
-        await query.message.edit("ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜsᴇʀs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
+        await query.message.edit("👀ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜsᴇʀs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
         temp.USERS_CANCEL = True
     elif ident == 'groups':
         temp.GROUPS_CANCEL = True
-        await query.message.edit("ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
+        await query.message.edit("🌝ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
        
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 async def broadcast_users(bot, message):
@@ -34,7 +34,7 @@ async def broadcast_users(bot, message):
     await msg.delete()
     users = await db.get_all_users()
     b_msg = message.reply_to_message
-    b_sts = await message.reply_text(text='<b>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ʏᴏᴜʀ ᴍᴇssᴀɢᴇs ᴛᴏ ᴜsᴇʀs ⌛️</b>')
+    b_sts = await message.reply_text(text='<b>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ʏᴏᴜʀ ᴍᴇssᴀɢᴇs ᴛᴏ ᴜsᴇʀs 🙄</b>')
     start_time = time.time()
     total_users = await db.total_users_count()
     done = 0
@@ -48,7 +48,7 @@ async def broadcast_users(bot, message):
             time_taken = get_readable_time(time.time()-start_time)
             if temp.USERS_CANCEL:
                 temp.USERS_CANCEL = False
-                await b_sts.edit(f"Users broadcast Cancelled!\nCompleted in {time_taken}\n\nTotal Users: <code>{total_users}</code>\nCompleted: <code>{done} / {total_users}</code>\nSuccess: <code>{success}</code>")
+                await b_sts.edit(f"😔Users broadcast Cancelled!\nCompleted in {time_taken}\n\nTotal Users: <code>{total_users}</code>\nCompleted: <code>{done} / {total_users}</code>\nSuccess: <code>{success}</code>")
                 return
             sts = await users_broadcast(int(user['id']), b_msg, is_pin)
             if sts == 'Success':
@@ -65,7 +65,7 @@ async def broadcast_users(bot, message):
 
 @Client.on_message(filters.command("grp_broadcast") & filters.user(ADMINS) & filters.reply)
 async def broadcast_group(bot, message):
-    msg = await message.ask('<b>Do you want pin this message in groups?</b>', reply_markup=ReplyKeyboardMarkup([['Yes', 'No']], one_time_keyboard=True, resize_keyboard=True))
+    msg = await message.ask('<b>💦Do you want pin this message in groups?</b>', reply_markup=ReplyKeyboardMarkup([['Yes', 'No']], one_time_keyboard=True, resize_keyboard=True))
     if msg.text == 'Yes':
         is_pin = True
     elif msg.text == 'No':
@@ -75,7 +75,7 @@ async def broadcast_group(bot, message):
     await msg.delete()
     chats = await db.get_all_chats()
     b_msg = message.reply_to_message
-    b_sts = await message.reply_text(text='<b>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ʏᴏᴜʀ ᴍᴇssᴀɢᴇs ᴛᴏ ɢʀᴏᴜᴘs ⏳</b>')
+    b_sts = await message.reply_text(text='<b>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ʏᴏᴜʀ ᴍᴇssᴀɢᴇs ᴛᴏ ɢʀᴏᴜᴘs 🙄</b>')
     start_time = time.time()
     total_chats = await db.total_chat_count()
     done = 0
@@ -87,7 +87,7 @@ async def broadcast_group(bot, message):
             time_taken = get_readable_time(time.time()-start_time)
             if temp.GROUPS_CANCEL:
                 temp.GROUPS_CANCEL = False
-                await b_sts.edit(f"Groups broadcast Cancelled!\nCompleted in {time_taken}\n\nTotal Groups: <code>{total_chats}</code>\nCompleted: <code>{done} / {total_chats}</code>\nSuccess: <code>{success}</code>\nFailed: <code>{failed}</code>")
+                await b_sts.edit(f"😔Groups broadcast Cancelled!\nCompleted in {time_taken}\n\nTotal Groups: <code>{total_chats}</code>\nCompleted: <code>{done} / {total_chats}</code>\nSuccess: <code>{success}</code>\nFailed: <code>{failed}</code>")
                 return
             sts = await groups_broadcast(int(chat['id']), b_msg, is_pin)
             if sts == 'Success':
@@ -100,5 +100,5 @@ async def broadcast_group(bot, message):
                     InlineKeyboardButton('CANCEL', callback_data=f'broadcast_cancel#groups')
                 ]]
                 await b_sts.edit(f"Groups groadcast in progress...\n\nTotal Groups: <code>{total_chats}</code>\nCompleted: <code>{done} / {total_chats}</code>\nSuccess: <code>{success}</code>\nFailed: <code>{failed}</code>", reply_markup=InlineKeyboardMarkup(btn))    
-        await b_sts.edit(f"Groups broadcast completed.\nCompleted in {time_taken}\n\nTotal Groups: <code>{total_chats}</code>\nCompleted: <code>{done} / {total_chats}</code>\nSuccess: <code>{success}</code>\nFailed: <code>{failed}</code>")
+        await b_sts.edit(f"🎉Groups broadcast completed.\nCompleted in {time_taken}\n\nTotal Groups: <code>{total_chats}</code>\nCompleted: <code>{done} / {total_chats}</code>\nSuccess: <code>{success}</code>\nFailed: <code>{failed}</code>")
 
