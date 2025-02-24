@@ -81,15 +81,25 @@ async def Jisshu_start():
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
-    await JisshuBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(me.mention, today, time))
-    await JisshuBot.send_message(chat_id=SUPPORT_GROUP, text=f"<b>{me.mention} RESTARTED 🤖</b>")
+    if LOG_CHANNEL and LOG_CHANNEL > 0:
+       await JisshuBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(me.mention, today, time))
+    else:
+        logging.error(f"Invalid LOG_CHANNEL: {LOG_CHANNEL}")
+
+    if SUPPORT_GROUP and SUPPORT_GROUP > 0:
+       await JisshuBot.send_message(chat_id=SUPPORT_GROUP, text=f"<b>{me.mention} RESTARTED 🤖</b>")
+    else:
+        logging.error(f"Invalid SUPPORT_GROUP: {SUPPORT_GROUP}")
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, PORT).start()
     await idle()
     for admin in ADMINS:
+    if admin and admin > 0:
         await JisshuBot.send_message(chat_id=admin, text=f"<b>{me.mention} BOT RESTARTED ✅</b>")
+    else:
+        logging.error(f"Invalid admin ID: {admin}")
 
 
 
