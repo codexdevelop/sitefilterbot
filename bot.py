@@ -96,10 +96,10 @@ async def Jisshu_start():
     await web.TCPSite(app, bind_address, PORT).start()
     await idle()
     for admin in ADMINS:
-    if admin and admin > 0:
-        await JisshuBot.send_message(chat_id=admin, text=f"<b>{me.mention} BOT RESTARTED ✅</b>")
-    else:
-        logging.error(f"Invalid admin ID: {admin}")
+        if admin and admin > 0:
+            await JisshuBot.send_message(chat_id=admin, text=f"<b>{me.mention} BOT RESTARTED ✅</b>")
+        else:
+            logging.error(f"Invalid admin ID: {admin}")
 
 
 
