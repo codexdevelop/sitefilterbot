@@ -19,7 +19,7 @@ async def grp_cmds(client, message):
         return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
     #title = message.chat.title
     buttons = [[
-                InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
+                InlineKeyboardButton('💀 ᴄʟᴏsᴇ 💀', callback_data='close_data')
             ]]        
     await message.reply_text(
         text=script.GROUP_C_TEXT,
@@ -57,4 +57,4 @@ async def set_commands(client, message):
             commands.append(BotCommand(command, description))
 
     await client.set_bot_commands(commands)
-    await message.reply("Set command successfully✅ ")
+    await message.reply("Set command successfully🫧 ")
