@@ -21,12 +21,12 @@ async def save_group(bot, message):
             await bot.send_message(LOG_CHANNEL, script.NEW_GROUP_TXT.format(temp.B_LINK, message.chat.title, message.chat.id, message.chat.username, group_link, total, user), disable_web_page_preview=True)  
             await db.add_chat(message.chat.id, message.chat.title)
             btn = [[
-                InlineKeyboardButton('⚡️ sᴜᴘᴘᴏʀᴛ ⚡️', url=USERNAME)
+                InlineKeyboardButton('🪄 sᴜᴘᴘᴏʀᴛ 🪄', url=USERNAME)
             ]]
             reply_markup=InlineKeyboardMarkup(btn)
             await bot.send_message(
                 chat_id=message.chat.id,
-                text=f"<b>☤ ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title}\n\n🤖 ᴅᴏɴ’ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ 🤖\n\n㊝ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ᴅᴏᴜʙᴛ ʏᴏᴜ ᴄʟᴇᴀʀ ɪᴛ ᴜsɪɴɢ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ㊜</b>",
+                text=f"<b>☤ ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title}\n\n🧊 ᴅᴏɴ’ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ❄️\n\n㊝ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ᴅᴏᴜʙᴛ ʏᴏᴜ ᴄʟᴇᴀʀ ɪᴛ ᴜsɪɴɢ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ㊜</b>",
                 reply_markup=reply_markup
             )
 
@@ -34,7 +34,7 @@ async def save_group(bot, message):
 async def leave_a_chat(bot, message):
     r = message.text.split(None)
     if len(message.command) == 1:
-        return await message.reply('<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ʟɪᴋᴇ ᴛʜɪꜱ `/leave -100******`</b>')
+        return await message.reply('<b>🫧ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ʟɪᴋᴇ ᴛʜɪꜱ `/leave -100******`</b>')
     if len(r) > 2:
         reason = message.text.split(None, 2)[2]
         chat = message.text.split(None, 2)[1]
@@ -47,19 +47,19 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         btn = [[
-            InlineKeyboardButton('⚡️ ᴏᴡɴᴇʀ ⚡️', url=USERNAME)
+            InlineKeyboardButton('💀 ᴏᴡɴᴇʀ 💀', url=USERNAME)
         ]]
         reply_markup=InlineKeyboardMarkup(btn)
         await bot.send_message(
             chat_id=chat,
-            text=f'😞 ʜᴇʟʟᴏ ᴅᴇᴀʀ,\nᴍʏ ᴏᴡɴᴇʀ ʜᴀꜱ ᴛᴏʟᴅ ᴍᴇ ᴛᴏ ʟᴇᴀᴠᴇ ꜰʀᴏᴍ ɢʀᴏᴜᴘ ꜱᴏ ɪ ɢᴏ 😔\n\n🚫 ʀᴇᴀꜱᴏɴ ɪꜱ - <code>{reason}</code>\n\nɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴀᴅᴅ ᴍᴇ ᴀɢᴀɪɴ ᴛʜᴇɴ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ 👇',
+            text=f'🧧 ʜᴇʟʟᴏ ᴅᴇᴀʀ,\nᴍʏ ᴏᴡɴᴇʀ ʜᴀꜱ ᴛᴏʟᴅ ᴍᴇ ᴛᴏ ʟᴇᴀᴠᴇ ꜰʀᴏᴍ ɢʀᴏᴜᴘ ꜱᴏ ɪ ɢᴏ 😔\n\n🩸 ʀᴇᴀꜱᴏɴ ɪꜱ - <code>{reason}</code>\n\n🍃 ɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴀᴅᴅ ᴍᴇ ᴀɢᴀɪɴ ᴛʜᴇɴ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ 👇',
             reply_markup=reply_markup,
         )
         await bot.leave_chat(chat)
         await db.delete_chat(chat)
-        await message.reply(f"<b>ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ ꜰʀᴏᴍ ɢʀᴏᴜᴘ - `{chat}`</b>")
+        await message.reply(f"<b>💫ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ ꜰʀᴏᴍ ɢʀᴏᴜᴘ - `{chat}`</b>")
     except Exception as e:
-        await message.reply(f'<b>🚫 ᴇʀʀᴏʀ - `{e}`</b>')
+        await message.reply(f'<b>💠 ᴇʀʀᴏʀ - `{e}`</b>')
 
 @Client.on_message(filters.command('groups') & filters.user(ADMINS))
 async def groups_list(bot, message):
