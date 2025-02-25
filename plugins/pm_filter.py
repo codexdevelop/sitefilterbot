@@ -577,11 +577,13 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         ])
     
         if i + 1 < len(LANGUAGES):  # Prevent IndexError
-            btn[-1].append(InlineKeyboardButton(
-                text=LANGUAGES[i + 1].title(),
-                callback_data=f"lang_search#{LANGUAGES[i + 1].lower()}#{key}#0#{offset}#{req}"
-            ))
-                    ])
+           btn.append([
+               InlineKeyboardButton(
+                   text=LANGUAGES[i + 1].title(),
+                   callback_data=f"lang_search#{LANGUAGES[i + 1].lower()}#{key}#0#{offset}#{req}"
+           )
+        ])
+		
     btn.append([InlineKeyboardButton(text="🧬 ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴘᴀɢᴇ", callback_data=f"next_{req}_{key}_{offset}")])
     await query.message.edit_text("<b>💀ɪɴ ᴡʜɪᴄʜ ʟᴀɴɢᴜᴀɢᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ, ᴄʜᴏᴏsᴇ ғʀᴏᴍ ʜᴇʀᴇ ↓↓</b>", reply_markup=InlineKeyboardMarkup(btn))
     return
