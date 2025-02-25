@@ -587,7 +587,8 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     return
 
 @Client.on_callback_query(filters.regex(r"^lang_search#"))
-async def lang_search(client: Client, query: CallbackQuery):
+async def lang_search(client, query: CallbackQuery):
+    print("Callback Query Received:", query.data)
     _, lang, key, offset, orginal_offset, req = query.data.split("#")
     lang2 = lang[:3]
     if int(req) != query.from_user.id:
