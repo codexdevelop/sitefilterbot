@@ -43,8 +43,8 @@ class JsTopDB:
         await bot.send_message(
         CHANNEL_ID,
         NEW_MOVIE_ADDED.format(movie_name)  # Yahan pe NEW_MOVIE_ADDED ka use ho raha hai
-    )
-    await bot.stop()  # Bot session stop karo
+        )
+        await bot.stop()  # Bot session stop karo
 # Watch database for real-time changes
 async def watch_database():
     """ Continuously watches for new movies and notifies the channel """
