@@ -36,11 +36,11 @@ class JsTopDB:
     from pyrogram import Client
 
     async def notify_update(self, movie_name):
-        """ Send a notification to the status channel """
-        bot = Client("MovieNotifierBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-    
-    async with bot:
-        await bot.send_message(CHANNEL_ID, f"**New Movie Added:** `{movie_name}` 🎬")
+    """ Send a notification to the status channel """
+    bot = Client("MovieNotifierBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+
+    async with bot:  # ✅ Yeh ab async function ke andar hai
+        await bot.send_message(CHANNEL_ID, f"**New Movie Added:** {movie_name} 🎬")
 # Watch database for real-time changes
 async def watch_database():
     """ Continuously watches for new movies and notifies the channel """
