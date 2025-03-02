@@ -1,4 +1,5 @@
 from info import DATABASE_URI
+from info import MOVIE_UPDATE_CHANNEL as CHANNEL_ID
 import motor.motor_asyncio
 import uuid  # for generating unique IDs
 
