@@ -2,8 +2,6 @@ from info import DATABASE_URI
 import motor.motor_asyncio
 import uuid  # for generating unique IDs
 
-CHANNEL_ID = -1002496641285 
-
 class JsTopDB:
     def __init__(self, db_uri):
         self.client = motor.motor_asyncio.AsyncIOMotorClient(db_uri)
