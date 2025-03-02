@@ -34,16 +34,22 @@ class JsTopDB:
         """ Remove all movie names for a group """
         await self.collection.delete_many({"group_id": group_id})
 
+    from pyrogram import Client
+
     async def notify_update(self, movie_name):
         """ Send a notification to the status channel """
-        async with bot:
-            await bot.send_message(CHANNEL_ID, f"📢 **New Movie Added:** `{movie_name}` 🎬")
-
+        bot = Client("MovieNotifierBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+    
+    async with bot:
+        await bot.send_message(CHANNEL_ID, f"**New Movie Added:** `{movie_name}` 🎬")
 # Watch database for real-time changes
 async def watch_database():
     """ Continuously watches for new movies and notifies the channel """
     movie_series_db = JsTopDB(DATABASE_URI)
-    async with movie_series_db.collection.watch() as stream:
+    
+    bot = Client("MovieNotifierBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+    
+    async with bot, movie_series_db.collection.watch() as stream:
         async for change in stream:
             if change["operationType"] == "insert":
                 movie_name = change["fullDocument"]["name"]
