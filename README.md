@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/qpxpGmC/image.jpg" alt="Jisshu-Auto-filter">
+  <img src="https://graph.org/file/3ae8d0cbee0f49aaccc21-e0169074de2ba24650.gif" alt="codex auto filter">
 </p>
 <h1 align="center">
   <a href="https://telegram.me/JISSHU_BOTS">Jisshu Auto Filter Bot</a>
