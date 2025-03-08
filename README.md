@@ -2,7 +2,7 @@
   <img src="https://graph.org/file/89ba01960f7ff33608f95-2d717ceab21f559d56.jpg" alt="codex auto filter">
 </p>
 <h1 align="center">
-  <a href="https://telegram.me/JISSHU_BOTS">Jisshu Auto Filter Bot</a>
+  <a href="https://t.me/codexbotmaker">Codex Auto Filter Bot</a>
 </h1>
 <img src="https://cdn.jsdelivr.net/gh/Jisshubot/Jisshubot/resources/hr.gif"/>
 
@@ -78,7 +78,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/Jisshubot/Jisshu-filter-bot">
+<a href="https://heroku.com/deploy?template=https://github.com/Nickroger797/Auto2healthy">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy To Heroku">
 </a>
 </p>
@@ -90,7 +90,7 @@
 <br>
 <br>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Jisshubots/Jisshu-filter-bot&branch=main&name=Jisshu-filter-bot )
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Nickroger797/Auto2healthy&branch=main&name=Auto2healthy )
 </details>
 
 <details><summary>Deploy To Render</summary>
@@ -117,7 +117,7 @@ Use these settings when adding a monitor:</b>
 <b>Click on the below button to deploy directly to render ↓</b>
 <br>
 <br>
-<a href="https://render.com/deploy?repo=https://github.com/Jisshubots/Jisshu-filter-bot/tree/main">
+<a href="https://render.com/deploy?repo=https://github.com/Nickroger797/Auto2healthy/tree/main">
 <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 </details>
@@ -135,20 +135,4 @@ python3 bot.py
 </details>
 
 <img src="https://cdn.jsdelivr.net/gh/Jisshubot/Jisshubot/resources/hr.gif"/>
-
-
-## **Thanks to** 
- - <b>Thanks To [Zishan Khan](https://t.me/JISSHU_BOTS) To Modify And Add Amazing Feature In The Repo
- - Thanks To [biisal](https://github.com/biisal/biisal-filter-bot) For Base Repo
- - Thanks To [Ꭺɴᴏɴʏᴍᴏᴜꜱ](https://t.me/TG_Anonymous_Official) To refresh Future Code and Update premium future</b>
- - Thanks To [Zoro](https://t.me/JOYBOY_ZORO) Your ideas have been a huge help in improving this project. Thanks for your valuable input!
- - Thanks To [ɪᴛ'ꜱ ʟᴜғғʏ](https://t.me/CoderluffyTG) For fixing key errors and making the bot better. Your help has been truly appreciated!
- - Thanks To All Everyone In This Journey
- <img src="https://cdn.jsdelivr.net/gh/Jisshubot/Jisshubot/resources/hr.gif"/>
-
-<img src="https://github.com/Jisshubot/Jisshubot/blob/master/resources/hr.gif"/>
-<h1> <img src="https://cdn.jsdelivr.net/gh/Jisshubot/JISSHU_BOTS/Logo/Jisshu.png" width="70px" style="border-radius: 50%"> ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ </h1>
-  
-[<img src="https://raw.githubusercontent.com/Jisshubot/Jisshubot/master/resources/telegram_icon.png" width="60px">](https://telegram.im/@JISSHU_BOTS) [<img src="https://raw.githubusercontent.com/AnonymousX1025/AnonymousX1025/master/resources/github_icon.png" width="60px">](https://github.com/Jisshubot) [<img src="https://raw.githubusercontent.com/AnonymousX1025/AnonymousX1025/master/resources/youtube_icon.png" width="60px">](https://www.youtube.com/@JISSHU-BOTS) [<img src="https://github.com/AnonymousX1025/AnonymousX1025/blob/master/resources/insta_icon.png" width="60px">](https://instagram.com/Zishan_khan565)
-
-<img src="https://cdn.jsdelivr.net/gh/Jisshubot/Jisshubot/resources/hr.gif"/>
+ 
