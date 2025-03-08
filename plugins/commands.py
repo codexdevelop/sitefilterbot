@@ -42,12 +42,6 @@ async def invite(client, message):
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client:Client, message):
     await message.react(emoji=random.choice(REACTIONS))
-    loading_msg = await message.reply_text("🪄")
-    await asyncio.sleep(0.3)
-    await loading_msg.edit_text("👀")
-    await asyncio.sleep(1)
-    await loading_msg.delete()
-    
     pm_mode = False
     try:
          data = message.command[1]
@@ -200,9 +194,11 @@ async def start(client:Client, message):
                             InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ 🃏', callback_data="trending")
                         ]] 
                         reply_markup = InlineKeyboardMarkup(buttons)
-                        m=await message.reply_sticker("CAACAgUAAxkBAAEOA0VnzF1mYx2NIV5lbYj2K2kJLX2f9gACghgAArjYYVaF8j5FP2YZEDYE") 
+                        m=loading_msg = await message.reply_text("🪄")
+                        await asyncio.sleep(0.3)
+                        await loading_msg.edit_text("👀")
                         await asyncio.sleep(1)
-                        await m.delete()
+                        await loading_msg.delete()
                         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
                             reply_markup=reply_markup,
                             parse_mode=enums.ParseMode.HTML)
@@ -229,9 +225,11 @@ async def start(client:Client, message):
                             InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ 🃏', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEOA0VnzF1mYx2NIV5lbYj2K2kJLX2f9gACghgAArjYYVaF8j5FP2YZEDYE") 
+        m=loading_msg = await message.reply_text("🪄")
+        await asyncio.sleep(0.3)
+        await loading_msg.edit_text("👀")
         await asyncio.sleep(1)
-        await m.delete()
+        await loading_msg.delete()
         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
