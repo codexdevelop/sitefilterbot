@@ -375,7 +375,3 @@ developer : Codexownerr
 ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
 </blockquote>
 Iғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ᴅᴏᴜʙᴛs ᴘʟᴇᴀsᴇ <a href="https://t.me/Codexownerr">ᴄᴏɴᴛᴀᴄᴛ</a> ᴍʏ <a href="https://t.me/Codexownerr">ᴀᴅᴍɪɴ</a></b>"""
-
-NEW_MOVIE_ADDED = """📢 **New Movie Added Successfully!** 🎬  
-Movie Name: `{}`  
-✅ **Check updates in our channel!**"""
