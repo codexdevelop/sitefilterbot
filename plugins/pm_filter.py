@@ -1474,10 +1474,11 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
         btn = []
         for file_num, file in enumerate(files, start=1):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start={"pm_mode_" if pm_mode else ''}file_{ADMINS[0] if pm_mode else message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {formate_file_name(file.file_name)}</a></b>"""
-    else:
-        btn = [[InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'),]
-               for file in files
-              ]
+    else:    
+        BLOGSPOT_URL = "https://your-blogspot.com/p/redirect.html"
+        btn = [[InlineKeyboardButton(text=f"📁 {get_size(file.file_size)} ≽ {formate_file_name(file.file_name)}",url=f"{BLOGSPOT_URL}?file={file.file_id}")] 
+	       for file in files
+	      ]
     if offset != "":
         if total_results >= MAX_BTN:
             btn.insert(0,[
