@@ -42,11 +42,15 @@ async def invite(client, message):
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client:Client, message):
     await message.react(emoji=random.choice(REACTIONS))
+    print(f"✅ Received Start Command: {message.text}")  # ✅ Debugging
     pm_mode = False
     try:
-         data = message.command[1]
-         if data.startswith('pm_mode_'):
-             pm_mode = True
+        data = message.command[1]
+        print(f"✅ Extracted Data: {data}")  # ✅ Debugging
+
+        if data.startswith("file_"):
+            file_id = data.split("_")[-1]
+            print(f"✅ Extracted File ID: {file_id}")  # ✅ Debugging
     except:
         pass
     m = message
